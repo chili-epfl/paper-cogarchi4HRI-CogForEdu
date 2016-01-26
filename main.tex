@@ -1,0 +1,232 @@
+
+\documentclass[conference]{IEEEtran}
+% *** CITATION PACKAGES ***
+%
+\usepackage{cite}
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\usepackage[pdftex]{graphicx}
+\graphicspath{./figures/}
+
+% *** SUBFIGURE PACKAGES ***
+%\ifCLASSOPTIONcompsoc
+%  \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+%\else
+%  \usepackage[caption=false,font=footnotesize]{subfig}
+%\fi
+
+\usepackage{url}
+
+
+\begin{document}
+
+\title{Cognitive Architecture For Learning with Robots}
+
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+\author{\IEEEauthorblockN{A}
+\IEEEauthorblockA{address A\\
+address A\\
+Email: todo}
+\and
+\IEEEauthorblockN{Homer Simpson}
+\IEEEauthorblockA{Twentieth Century Fox\\
+Springfield, USA\\
+Email: homer@thesimpsons.com}
+\and
+\IEEEauthorblockN{James Kirk\\ and Montgomery Scott}
+\IEEEauthorblockA{Starfleet Academy\\
+San Francisco, California 96678--2391\\
+Telephone: (800) 555--1212\\
+Fax: (888) 555--1212}}
+
+
+
+\maketitle
+
+% As a general rule, do not put math, special symbols or citations
+% in the abstract
+\begin{abstract}
+Robots new application
+
+One of this new application, co-learner
+
+
+In the context of learning with a robot, we discuss in this paper  the necessity for robots to be able of cognitive reasoning. 
+We present the context of learning assisted by robot. 
+We then argue for cognitive architectures able to assure social interaction in this type of context. 
+
+Current cog architecture not tailored for social HRI and to model mental states from social behaviour w humanoid robot
+
+Few applied in this context
+
+We introduce some requirements for such architecture. 
+We finally present a proposal of architecture based on mutual modelling. 
+
+Our architecture aims to contribute to the SOA by \dots
+
+\end{abstract}
+
+% no keywords
+
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+
+\section{Introduction}
+Why should you use cognitive architectures - how would they benefit your research as a theoretical framework, a tool and/or a methodology?
+
+Should cognitive architectures for social interaction be inspired and/or limited by models of human cognition?
+
+What are the functional requirements for a cognitive architecture to support social interaction?
+
+How the requirements for social interaction would inform your choice of the fundamental computational structures of the architecture (e.g. symbolic, sub-symbolic, hybrid, ...)?
+
+
+Can you devise a social interaction scenario that current cognitive architectures would likely fail, and why?
+
+
+Robots present as assistant in various domains health, rescue, education
+
+Robots are brought o be in social interaction with humans.
+Necessity to behave in an acceptable and understandable manner by the user.
+
+describe research context, 
+
+
+robots for education
+
+learning by teaching
+
+co-writer
+
+\section{The need for cog archi in educational robotics}
+way to represent the learners knowledge
+
+essential for logical reasoning, 
+explanation of concepts
+
+
+
+\section{Related Works}
+According to \cite{Vernon2011}, the term ``cognitive architecture'' aimed to unify theories of cognition on various issues such as attention, memory, problem solving, decision making, learning, across different disciplines including psychology, neuroscience and computer-sciences.
+Some architectures are based on philosophical theories, some on biological theories and others on psychological theories~\cite{Thorisson2012,Chong2009}.
+Often; they do not aim to tackle the same research problem. 
+For instance, often, biologically based cognitive architectures aim to mimic the human brain while psychological ones focus on cognitive processes.
+
+There exist two main families of cognitive architectures: the \textit{cognitivist} and the \textit{emegergentist} perspectives.
+
+\paragraph{The Emergent Perspective} covers developmental cognitive architectures.
+In these types of architectures, the model and the processes are learned from experience. 
+Thus, the knowledge is automatically acquired. 
+However, these architectures also assume a part of innate knowledge at first.
+These systems are often platform-sensitive but research here usually focuses on general frameworks of model acquisition in order to be reusable on other platforms. 
+The model and the process are often task and domain dependent and are linked to sensorimotor loops.
+The emergent cognitive architectures reflect in some way the morphology of the system. 
+In this category, we find for example the \textit{HAMMER} \cite{Demiris2005} or the \textit{ICub Cognitive architecture} \cite{Vernon2007}.
+
+
+\paragraph{The Cognitivist Perspective} considers the cognitive architectures as generic computational models neither domain, nor task-specific. 
+A human programmer or machine learning feed the system with knowledge making it more specific to a task or a domain.
+The system is composed of computational models of cognition that are  taken from various sources (i.e biology, psychology, philosophy).
+For the cognitivists, the cognitive processes are independent from the physical platform (increasing the generic aspect of the computational models).
+
+\textit{ICARUS}, belonging to this family of cognitive architectures \cite{LaChRo2005,Langley2006} is also grounded in cognitive psychology, and \textit{AI} (like \textit{BDI} \footnote{BDI : Belief, Desire, Intention logic, developed by \cite{bratman1987}}) aims at unifying reactive and deliberative (problem-solving) execution, as well as symbolic and numeric (utilities) reasoning. 
+Memory is organised into short vs long-term, and conceptual vs skill memory.
+ICARUS has several goals but focuses only on the one with highest unsatisfied priority.
+The skills that allow to achieve it are brought from long-term to short-term memory.
+If no skill is available, the system uses means-end analysis to decompose into sub-goals, and learns from this impasse.
+
+For instance, some architectures are based on a set of generic and symbolic rules, such as \textit{Soar} \cite{Laird2012}, based on the unified theory of cognition, or \textit{ACT-R} \cite{Anderson2005}. 
+Many of these architectures are based on the ``mind-is-like-a-computer'' analogy.
+
+\begin{table}
+	\begin{tabular}{p{0.5\linewidth} p{0.5\linewidth}} \hline
+		System 1 (old mind) (intuitive) & System 2 (new mind) (reflective) \\ \hline
+		Does not require working memory Autonomous &
+		Requires working memory Cognitive decoupling; mental simulation \\
+		Fast & Slow \\
+		High capacity & Capacity limited \\
+		Parallel & Serial \\
+		Non-conscious &	Conscious \\
+		Biased responses & Normative responses \\
+		Contextualized & Abstract \\
+		Automatic & Controlled \\
+		Associative & Rule-based \\
+		Experience-based decision making & Consequential decision making \\
+		Independent of cognitive ability & Correlated with cognitive ability \\ \hline
+		Evolved early  & Evolved late \\
+		Similar to animal cognition &	Distinctively human \\
+		Implicit knowledge  & Explicit knowledge \\
+		Basic emotions & Complex emotions \\ \hline
+	\end{tabular}
+	\caption{Properties of System 1 and System 2 from the Dual-Process Theories of cognition from \cite{Evans2013}.}
+	\label{fig:dual_system}
+\end{table}
+%\vspace{1cm}
+
+The Dual-process theory marries these two families of cognitive architectures \cite{Evans2013}: the cognitivist and the emergentist.
+This theory states that there exist two cognitive systems involved in cognition, one fast and intuitive (S1) and the other, slow and deliberative (S2).
+The table~\ref{fig:dual_system} summarizes different characteristics of these two subsystems.
+Underlying these two systems (S1 and S2), we see the two families of cognitive architectures (Emergent and Cognitivist).
+
+\textbf{Hybrid approaches} of cognitive architectures constitute the last family combining Emergent and Cognitivist approaches.
+Hybrid architectures combine both types of processing. \textit{CLARION}  \cite{Sun2003} is an example of such an architecture.
+Recently, other architectures have been proposed, focusing on memory \cite{baxter2013} or attentional processes and a sensori-motor approach \cite{demiris2006}.
+
+
+\section{Mutual Modelling towards a model for TOM}
+Subsubsection text here.
+
+
+
+%What is the primary outstanding challenge in developing and/or applying cognitive architectures to social HRI systems?
+\section{Challenges for Cognitive Architecture for Educational HRI}
+Mainly method of evaluation to prove the following concepts
+\begin{enumerate}[noitemsep]
+		\item Categorise and Understand: enable to build ontologies and to acquire semantic knowledge.
+		\item Have an episodic memory and reflective processes.
+		\item Use ontology in order to encode the knowledge for more flexibility and re-usability.
+		\item Enable to communicate decision and plans.
+		\item Integrate new sensors for physical perception of the world.
+		\item Enable embodied applications and expressions.
+		\item Integrate emotions in the cognitive process.
+		\item Enable generalisation and modularity.
+\end{enumerate}
+
+
+\section{Conclusion}
+The conclusion goes here.
+
+
+\section*{Acknowledgment}
+
+
+The authors would like to thank...
+
+
+
+
+
+
+\bibliographystyle{IEEEtran}
+
+\bibliography{biblio}
+
+\end{document}
+
+
