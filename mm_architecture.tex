@@ -43,7 +43,12 @@ $^2$INESC-ID \& Instituto Superior T\'{e}cnico, University of Lisbon, Portugal
 % As a general rule, do not put math, special symbols or citations
 % in the abstract
 \begin{abstract}
-In a collaborative learning scenario, learner(s) and eventual teacher(s) must be able to understand each other. For instance, learners share their knowledge and they must adapt their behaviour in order to make sure they are understood by others. This ability requires a model of their own mental states perceived by others.
+In an educational scenario, learners and teacher are able to understand each other. 
+%For instance, learners share their knowledge and they must adapt their behaviour in order to make sure they are understood by others. 
+Learners display behaviours in order to show their understanding and teachers adapt in order to make sure that the learners' knowledge is the required one. 
+This ability requires a model of their own mental states perceived by others.
+%For instance, did the learner saw that the teacher saw that the learner misunderstood the aim of the task?
+
 In this paper, we discuss of the importance of a cognitive architecture enabling second-order Mutual Modelling for Human-Robot Interaction in educative contexts.
 
 
@@ -86,27 +91,34 @@ In this paper, we discuss of the importance of a cognitive architecture enabling
 
 %%%% CoWriter
 
-Using robots in educative scenario is an important challenge of HRI, especially when the role of the robot can not be easily taken by humans. Such a scenario has been developed within the CoWriter Project~\cite{Hood}~\cite{jacq2016building} the activity introduces a new approach to help children with difficulties to learn handwriting. Based on \emph{learning by teaching} paradigm, it aims to repair self-confidence and motivation of the child rather than his handwriting performance alone.
+Using robots in educative scenario is an important challenge of HRI.
+The ability of robots to support adaptive and repetitive task can be valuable in a learning interaction.
+The CoWriter Project~\cite{Hood,jacq2016building} introduces a new approach to help children with difficulties to learn handwriting. 
+Based on the \emph{learning by teaching} paradigm, the goal of the project is not only to help children with their handwriting but mainly to improve their self-confidence and motivation in practising handwriting.
 
-\emph{Learning by teaching} is a technique that engages students to conduct the activity in the role of the teachers in order to support their learning process. This 
-paradigm is known to produce motivational, meta-cognitive and educational
-benefits in a range of disciplines~\cite{Rohrbeck2003}. The CoWriter project
-is the first application of learning by teaching approach to handwriting.
+\emph{Learning by teaching} engages students to conduct the activity in the role of the teachers in order to support their learning process. 
+This  paradigm is known to produce motivational, meta-cognitive and educational benefits in a range of disciplines~\cite{Rohrbeck2003}. 
+The CoWriter project is the first application of learning by teaching approach to handwriting.
 
-The effectiveness of this learning by teaching activity is built on the
-``prot\'eg\'e effect'': the teacher feels responsible for his student, commits
+The effectiveness of this learning by teaching activity is built on the ``prot\'eg\'e effect'': the teacher feels responsible for his student, commits
 to the student's success and possibly experiences student's failure as his own
-failure to teach. The main idea is to promote in the child an extrinsic motivation to write letters (he will do it in order to help his ``prot\'eg\'e" robot) and to reinforce the self-esteem of the child (he plays the teacher and the robot actually progress).
+failure to teach. 
+The main idea is to promote the child's extrinsic motivation to write letters (he will do it in order to help his ``prot\'eg\'e" robot) and to reinforce the self-esteem of the child (he plays the teacher and the robot actually progresses).
 
-In that context, we need the robot to be able to pretend enough difficulties to motivate the child to help it. This pretending strongly depends on the perception of the robot by the child: the micro-behaviours (gestures, gazes and sounds), initial level and learning speed of the robot must match with what the child imagines of a ``robot in difficulty". 
+In that context, the robot needs to pretend enough difficulties to motivate the child to help it. 
+This pretending strongly depends on the perception of the robot by the child: the displayed behaviours (gestures, gazes and sounds) by the robot, the initial level and learning speed of the robot must match with what the child imagines of a ``robot in difficulty".
+In order to adapt to the child, the robot needs then to have a model of how it is perceived by the child. On the other side, the child builds also a model of the robot's difficulties and attitude. 
+This mutual-modelling is primordial in order to have mutual understanding and fluis interaction between learner and teacher. 
 
 %%%% ToM
 
-Developed by Baron-Cohen and Leslie~\cite{baron1985does}, the Theory of Mind (ToM) describes the ability to attribute mental states and knowledge to others. In interaction, humans are permanently collecting and analysing huge quantity of information to stay aware of emotions, goals and understandings of their fellows. In this work, we focus on a generalization of this notion: Mutual Modelling characterizes the effort of one agent to model the mental state of another one~\cite{dillenbourg1999you}. 
+Developed by Baron-Cohen and Leslie~\cite{baron1985does}, the Theory of Mind (ToM) describes the ability to attribute mental states and knowledge to others. 
+In interaction, humans are permanently collecting and analysing huge quantity of information to stay aware of emotions, goals and understandings of their fellows. 
+In this work, we focus on a generalization of this notion: \emph{Mutual Modelling} characterizes the effort of one agent to model the mental state of another one~\cite{dillenbourg1999you}. 
 
-Until now, the work conduced by the Human-Robot Interaction (HRI) community to develop mutual modelling abilities in robots was limited to a first level of modelling. Higher levels require the ability to recursively attribute a theory of mind to other agent (\textit{I think that you think that} ...) and their application to HRI remains unexplored.  
-
-We believe that, at least in a context of educational HRI, we must promote first and second-order mutual modelling abilities in cognitive architectures. In the following sections, we first present the different frameworks that have been developed for Mutual Modelling and their previous adaptations in HRI research. Then we describe in the possible ways to infer both first and second-order models in real time and to make decisions based on this information. 
+Until now, in Human-Robot Interaction (HRI), mutual modelling abilities of robots were limited to first level of modelling. 
+Higher levels of modelling require the ability to recursively attribute a theory of mind to other agent (\textit{I think that you think that} \dots).  
+We believe that in a context of educational HRI, we must promote first and second-order mutual modelling abilities in cognitive architectures. In the following sections, we first present the different frameworks that have been developed for Mutual Modelling and their previous adaptations to HRI. Then we describe in the possible ways to infer both first and second-order models in real time and to make decisions based on these models. 
 
 \section{Related works}
 
