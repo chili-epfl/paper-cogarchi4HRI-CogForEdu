@@ -135,9 +135,9 @@ However, HRI research has not, until now, explored the whole potential of mutual
 He focused his work on attention and perceptual processes (face detection or colour saliency detection). Thereafter, some works (including Breazeal~\cite{breazeal2006using}, Trafton~\cite{Trafton2005}, Ros~\cite{Ros2010} and Lemaignan~\cite{lemaignan2012thesis}) were conduced to implement Flavell's first level of perspective taking~\cite{flavell1977development} (``\textit{I see (you do not see the book)}"), ability that is still limited to visual perception. 
 In \cite{lemaignan2016realtime}, Lemaignan implemented a system that compute in real-time the visual field of agents and estimate which objects are looked at. This time, the robot is not just aware of what \textit{can be seen} by agents, but it perceives what \textit{is currently looked at}. Lemaignan used this system to measure Sharma's \textit{with-me-ness}~\cite{sharma2014me}, visual commitment based on expected focus of attention in an activity. 
 
-\section{Next steps for MM-based cognitive architecture}
+\section{MM-based reasoning}
 
-\subsection{Representation of models}
+%\subsection{Representation of models}
 A first intuition for mutual modelling is to assume that all agents have the same cognitive abilities. This assumption leads to recursive structures: the robot is projecting its own cognitive abilities in other agents to build their models.  Following this direction, a second level of mutual modelling would be encoded by a second step of recursion: the robot also projects its faculty to make such a projection. But high computational capacities are required and modelling operating structures is not sufficient: the contents of models (physical and mental states) must be memorized, as well as contents of second-order models. 
 
 We propose a different approach, where we define two orders of agents: the \textit{first-order-agents} concern direct representations of agents by the robot (for example the child), while the \textit{second-order-agents} concern the representation of agents by agents (for example the robot-perceived-by-the-child). 
@@ -151,7 +151,7 @@ Some variables can't be directly measured by the sensitive devices and are deduc
 %todo no section expected causality, give example here
 A model of an agent is the set of all the values of the perceived or abstract variables associated to this model. Since the values of variables are likely to change with the time, the models are dynamic.
 
-\subsection{Reasoning}
+%\subsection{Reasoning}
 
 In order to deduce the values of abstract variables (that can't be obtained from direct perception),
 we propose to build a Bayesian model based on the knowledge from perceived variables. 
@@ -167,23 +167,37 @@ the probability that the child understood the pointing movement is expected to b
 Knowing that, the robot can make the decision to exaggerate its movement of pointing. 
 
 
-\subsection{Global description of the architecture}
+\section{Description of the architecture}
+The picture~\ref{cog} visually summarize the global design of our architecture. 
 
+\begin{figure}[!]
+\centering
+\includegraphics[width=1\columnwidth]{cognitive_archi}
+\caption{\small\textbf{Overview of the cognitive architecture}. Yellow squares represent different main parts. White ellipses represent modules. We named in example some content of modules and illustrated possible devices used for perception and decisions. }
+\label{cog}
+\end{figure}
+%todo rewrite according to pierre's feedback
 Our cognitive architecture for mutual modelling can be designed in three main parts. 
-The \textbf{perception part} will regroup all the modules that measure the values of the perceived variables using sensitive devices (camera, sensors, micros...). 
+The \textbf{perception part} (see \ref{ssec:perception}) will regroup all the modules that measure the values of the perceived variables using sensitive devices (camera, sensors, micros...). 
 An example of module of the sensitive part could be the system developed by Lemaignan~\cite{lemaignan2016realtime} that uses camera to measure a value of \textit{with-me-ness}. 
-These values are sent to the \textbf{mutual modelling part} that updates in real-time models with measured values of perceived variables and deducts the value of abstract variables. Finally, the \textbf{decision part} contains all the modules associated to the control of the robot (and other active devices like tablets in CoWriter). These modules can read values given by mutual models in order to compute decisions. In the example of the CoWriter activity, these modules are given by the system that learns and generate letters, but we can add a module that generates micro-behaviour, another that decides to switch to a new activity (e.g. drawing with the robot),... etc. The following subsections explain in detail the content and operation of the three parts of the architecture. 
+These values are sent to the \textbf{mutual modelling part} (see \ref{ssec:mmm}) that updates in real-time models with measured values of perceived variables and deducts the value of abstract variables. Finally, the \textbf{decision part} (see \ref{ssec:decision}) contains all the modules associated to the control of the robot (and other active devices like tablets in CoWriter). These modules can read values given by mutual models in order to compute decisions. In the example of the CoWriter activity, these modules are given by the system that learns and generate letters, but we can add a module that generates micro-behaviour, another that decides to switch to a new activity (e.g. drawing with the robot),\dots. The following subsections explain in detail the content and operation of each part of the architecture. 
 
 \subsection{Perception modules}
-
-The sensitive modules contain all the module able to use sensitive devices to measure value of relevant perceived variables. Some of these modules are associated with the content of the interaction activity. In CoWriter, the learning module takes inputs of tablets to compute the new state of robot's writing. It defines a sensitive module, and the value of the new state of the robot to write a letter defines a perceived variable. As well, the evaluation of the robot by the child via the feedback buttons defines another perceived variable provided by the modules of the activity. Other modules are independent of the activity: the system that estimates the target objects looked by the child provides additive information not directly used by the modules of the activity.  
+\label{ssec:perception}
+The sensitive modules contain all the module able to use sensitive devices to measure value of relevant perceived variables.
+%todo say that these modules are layered from signal perceived to percived variable
+% the perceived variables are more or less linked to the activity. SOme aren't for instance the with me ness 
+Some of these modules are associated with the content of the interaction activity. 
+In CoWriter, the learning module takes inputs of tablets to compute the new state of robot's writing. It defines a sensitive module, and the value of the new state of the robot to write a letter defines a perceived variable. As well, the evaluation of the robot by the child via the feedback buttons defines another perceived variable provided by the modules of the activity. Other modules are independent of the activity: the system that estimates the target objects looked by the child provides additive information not directly used by the modules of the activity.  
 
 \subsection{Mutual modelling modules}
-
-Each perceived value measured by sensitive modules are associated with the model of an agent (or a $n^{th}$-order agent). Each mutual model can be designed as a module that knows the list of its associated perceived variables and watch if the value of one of these variables has been changed. An additive module knows all the expected causalities and computes the values of abstract variables. Some expected causalities can be empirically learned and other set by hands. 
+\label{ssec:mmm}
+Each perceived value measured by sensitive modules are associated with the model of an agent (or a $n^{th}$-order agent). Each mutual model can be designed as a module that knows the list of its associated perceived variables and watch if the value of one of these variables has been changed. 
+%todo trop flou comme description, il faut donné des noms et enrichir le schema pour y faire référence
+An additive module knows all the expected causalities and computes the values of abstract variables. Some expected causalities can be empirically learned and other set by hands. 
 
 \subsection{Decision making}
-
+\label{ssec:decision}
 We believe that the values of variables provided by mutual modelling will provide rich and useful information for decision making. Taking in account these values to elaborate decision should improve the realism and the efficiency of the robot in the interaction.
 Just like the sensitive ones, the modules that take decision can be directly associated to the activity (in CoWriter, the choice of a new learning curve or the decision to suddenly make a big mistake), or can govern independent behaviour (for example a module that generate the micro-behaviour of the robot).
 
@@ -194,16 +208,9 @@ Some decisions, especially the one that will govern the micro-behaviours of the 
 \item \textbf{Autonomous}: The robot makes decisions
 \end{enumerate}
 
-The picture~\ref{cog} visually summarize the global design of our architecture. 
 
-\begin{figure}[!]
-\centering
-\includegraphics[width=1\columnwidth]{cognitive_archi}
-\caption{\small\textbf{Overview of the cognitive architecture}. Yellow squares represent different main parts. White ellipses represent modules. We named in example some content of modules and illustrated possible devices used for perception and decisions. }
-\label{cog}
-\end{figure}
 
-\section{conclusion}
+\section{Conclusion}
 
 Educational HRI based on learning by teaching approach needs robot able to perform second-level mutual modelling. 
 We introduced a new approach to implement mutual modelling into a cognitive architecture. We used the CoWriter activity
