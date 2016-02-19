@@ -89,9 +89,19 @@ In this paper, we discuss of the importance of a cognitive architecture enabling
 %Robots are brought o be in social interaction with humans.
 %Necessity to behave in an acceptable and understandable manner by the user.
 
-%%%% CoWriter
+%%%% ToM
 
-Using robots in educative scenario is an important challenge of HRI.
+A social robot is brought to interact with humans. The quality of this interaction depends on its ability to behave in an acceptable and understandable manner by the user. Hence the importance for a robot to take care of his image: how much it is perceived as an automatic and boring agent, or contrariwise as a surprising and intelligent character. If the robot is able to detect this perception of itself, it can adapt its behaviour in order to be understood: ``you think I am sad while I am happy, I want you to understand that I am happy". In a collaborative context, where knowledge must be shared, agents must exhibit that they are acquiring the shared information with an immediate behaviour: ``I look what you are showing to me, do you see I am looking what you are showing, do you think I am paying attention to your explanation ?"; ``I have understood your idea, do you understand I have understood ?". We have different strategies to exhibit understanding or to repair a miss-understanding. As an example, if someone is talking about a visual object, we alternatively gaze at the object and at the person to make sure he saw we gazed at the object. Or if we detect that the other have not understood a gesture (e.g. pointing an object) we probably exaggerate the gesture.
+
+Developed by Baron-Cohen and Leslie~\cite{baron1985does}, the Theory of Mind (ToM) describes the ability to attribute mental states and knowledge to others. In interaction, humans are permanently collecting and analysing huge quantity of information to stay aware of emotions, goals and understandings of their fellows. In this work, we focus on a generalization of this notion: Mutual Modelling characterizes the effort of one agent to model the mental state of another one~\cite{dillenbourg1999you}. 
+
+Until now, the work conduced by the Human-Robot Interaction (HRI) community to develop mutual modelling abilities in robots was limited to a first level of modelling (see Related Work section~\ref{rw}). Higher levels require the ability to recursively attribute a theory of mind to other agent (\textit{I think that you think that} ...) and their application to HRI remains unexplored. However, a knowledge of oneself perceived by others is necessary to adapt a behaviour to keep mutual understandings. Without such a reflection it is possible to try collaborations, but no immediate feedbacks of success are given. If the trial has failed it is impossible to guess it and to repair it. 
+
+%%%% CoWriter
+% improve transition
+% elgaguer
+
+An important challenge of social robotics is to provide assistance in education. 
 The ability of robots to support adaptive and repetitive task can be valuable in a learning interaction.
 The CoWriter Project~\cite{Hood,jacq2016building} introduces a new approach to help children with difficulties to learn handwriting. 
 Based on the \emph{learning by teaching} paradigm, the goal of the project is not only to help children with their handwriting but mainly to improve their self-confidence and motivation in practising handwriting.
@@ -108,48 +118,44 @@ The main idea is to promote the child's extrinsic motivation to write letters (h
 In that context, the robot needs to pretend enough difficulties to motivate the child to help it. 
 This pretending strongly depends on the perception of the robot by the child: the displayed behaviours (gestures, gazes and sounds) by the robot, the initial level and learning speed of the robot must match with what the child imagines of a ``robot in difficulty".
 In order to adapt to the child, the robot needs then to have a model of how it is perceived by the child. On the other side, the child builds also a model of the robot's difficulties and attitude. 
-This mutual-modelling is primordial in order to have mutual understanding and fluis interaction between learner and teacher. 
+This mutual-modelling is primordial in order to have mutual understanding and fluid interaction between learner and teacher. 
 
-%%%% ToM
 
-Developed by Baron-Cohen and Leslie~\cite{baron1985does}, the Theory of Mind (ToM) describes the ability to attribute mental states and knowledge to others. 
-In interaction, humans are permanently collecting and analysing huge quantity of information to stay aware of emotions, goals and understandings of their fellows. 
-In this work, we focus on a generalization of this notion: \emph{Mutual Modelling} characterizes the effort of one agent to model the mental state of another one~\cite{dillenbourg1999you}. 
-
-Until now, in Human-Robot Interaction (HRI), mutual modelling abilities of robots were limited to first level of modelling. 
-Higher levels of modelling require the ability to recursively attribute a theory of mind to other agent (\textit{I think that you think that} \dots).  
-We believe that in a context of educational HRI, we must promote first and second-order mutual modelling abilities in cognitive architectures. In the following sections, we first present the different frameworks that have been developed for Mutual Modelling and their previous adaptations to HRI. Then we describe in the possible ways to infer both first and second-order models in real time and to make decisions based on these models. 
 
 \section{Related works}
 
-In several contexts, a large amount of fields have introduced their own framework to describe mutual modelling ability~\cite{lemaignan2015mutual}. 
-In developmental psychology, Flavell~\cite{flavell1990developmental} denotes two different levels of perspective taking: the \textit{cognitive connection} (I see, I hear, I want, I like...) and \textit{mental representation} (what other agents feel, hear, want...).
+A large amount of fields have introduced frameworks to describe mutual modelling ability~\cite{lemaignan2015mutual}. 
+In developmental psychology Flavell~\cite{flavell1990developmental} denotes two different levels of perspective taking: the \textit{cognitive connection} (I see, I hear, I want, I like...) and \textit{mental representation} (what other agents feel, hear, want...).
 
-In \textit{computer supported collaborative learning} (CSCL), Roschelle and Teasley~\cite{roschelle1995construction} suggested that collaborative learning requires a process of constructing and maintaining a \textit{shared understanding} of the task. 
-The term ``mutual modelling" was introduced in this context, and focused on knowledge states of agents~\cite{dillenbourg1999you}. Dillenbourg developed in \cite{sangin2007partner} a computational framework to represent mutual modelling situations.
-%TODO reformuler les 2 phrases precedentes
+From a computational perspective, Epistemic logic describes knowledges and beliefs shared by agents. This framework enables consideration of infinite-level of mutual modelling. It defines a \textit{shared-knowledge} (all the agents of a group know \textbf{X}) and a \textit{common-knowledge} (all the agents of a group know \textbf{X}, and know that all the agent know \textbf{X}, and know that all the agents know that all the agents know \textbf{X}, \dots.)~\cite{hendricks2008epistemic}. 
 
-Epistemic logic describes knowledges and beliefs shared by agents. This framework enables consideration of infinite-level of mutual modelling. It defines a \textit{shared-knowledge} (all the agents of a group know \textbf{X}) and a \textit{common-knowledge} (all the agents of a group know \textbf{X}, and know that all the agent know \textbf{X}, and know that all the agents know that all the agents know \textbf{X}, \dots.)~\cite{hendricks2008epistemic}. 
+Mutual modelling has also been studied through educational contexts. Roschelle and Teasley~\cite{roschelle1995construction} suggested that collaborative learning requires a \textit{shared understanding} of the task and of the shared information to solve it. 
+The term ``mutual modelling" was introduced in Computer-Supported Collaborative Learning (CSCL) by Dillenbourg~\cite{dillenbourg1999you}. It focused on knowledge states of agents. Dillenbourg developed in \cite{sangin2007partner} a computational framework to represent mutual modelling situations.
 
 However, HRI research has not, until now, explored the whole potential of mutual modelling. In \cite{scassellati2002theory}, Scassellati supported the importance of Leslie's and Baron-Cohen's theory of mind to be implemented as an ability for robots. 
 He focused his work on attention and perceptual processes (face detection or colour saliency detection). Thereafter, some works (including Breazeal~\cite{breazeal2006using}, Trafton~\cite{Trafton2005}, Ros~\cite{Ros2010} and Lemaignan~\cite{lemaignan2012thesis}) were conduced to implement Flavell's first level of perspective taking~\cite{flavell1977development} (``\textit{I see (you do not see the book)}"), ability that is still limited to visual perception. 
-In \cite{lemaignan2016realtime}, Lemaignan implemented a system that compute in real-time the visual field of agents and estimate which objects are looked at. This time, the robot is not just aware of what \textit{can be seen} by agents, but it perceives what \textit{is currently looked at}. Lemaignan used this system to measure Sharma's \textit{with-me-ness}~\cite{sharma2014me}, visual commitment based on expected focus of attention in an activity. 
 
+Breazeal~\cite{breazeal2009embodied} and Warnier~\cite{warnier2012when} reproduced the Sally and Anne's test of Wimmer~\cite{wimmer1983beliefs} with robots able to perform visual perspective taking. The robot was able to infer the knowledge of a human given the historic of his visual experience. 
+
+In \cite{lemaignan2016realtime}, Lemaignan implemented a system that compute in real-time the visual field of agents and estimate which objects are looked at. This time, the robot is not just aware of what \textit{can be seen} by agents, but it perceives what \textit{is currentl
+y looked at}. Lemaignan used this system to measure Sharma's \textit{with-me-ness}~\cite{sharma2014me}, visual commitment based on expected focus of attention in an activity. 
 \section{MM-based reasoning}
 
+We must make a distinction between architectures that performs mutual modelling and simple cognitive architectures (that does not model other agents) in order to avoid miss-understandings and Russel's paradoxes. Let's call \textit{basic} such a simple architecture and \textit{MM-based} the mutual modelling ones. 
+
 %\subsection{Representation of models}
-A first intuition for mutual modelling is to assume that all agents have the same cognitive abilities. This assumption leads to recursive structures: the robot is projecting its own cognitive abilities in other agents to build their models.  Following this direction, a second level of mutual modelling would be encoded by a second step of recursion: the robot also projects its faculty to make such a projection. But high computational capacities are required and modelling operating structures is not sufficient: the contents of models (physical and mental states) must be memorized, as well as contents of second-order models. 
+A first intuition for mutual modelling is to assume that all agents have the same basic architecture. In [], Breazeal show a MM-based reasoning where the robot uses its own basic architecture to model other agents. We can imagine a second level of modelling where a robot uses its MM-based architecture to model the other agent. But that creates an infinite recursive loop: the agent then models the robot that models the agent etc. Another reason to avoid a recursive approach is that different agent must have different behaviours: in similar situations, they will not necessary take similar decisions. 
 
-We propose a different approach, where we define two orders of agents: the \textit{first-order-agents} concern direct representations of agents by the robot (for example the child), while the \textit{second-order-agents} concern the representation of agents by agents (for example the robot-perceived-by-the-child). 
+We propose a different approach of modelling, where we define two orders of agents: the \textit{first-order-agents} concern direct representations of agents by the robot (for example the child), while the \textit{second-order-agents} concern the representation of agents by agents (for example the robot-perceived-by-the-child). 
 To model second-order-agent like the robot-perceived-by-the-child will help to model how the child perceives the robot, e.g. to make sure the child understand that the robot is learning from his demonstrations. 
-We can as well define \textit{$n^{\textit{th}}$-order} agents with higher level of theory of mind. But taking into account high levels of mutual modelling would be difficult to process in real time. Unlike the epistemic logic, our proposed framework will not take into account infinite regress~\cite{clark1991grounding} of mutual modelling. 
+We can as well define \textit{$n^{\textit{th}}$-order} agents with higher level of theory of mind. But taking into account high levels of mutual modelling would be difficult to process in real time. Unlike the epistemic logic, our proposed framework will not take into account infinite regress~\cite{clark1991grounding} of mutual modelling.
 
-The sensitive devices (for example cameras, micros, robot's sensors ... and in the case of CoWriter the tablet's inputs) are used to measure \textit{perceived variables} (the position in space of agents, the gaze's targets, quality of demonstrations, the time to respond, the evaluation of the robot by the child...). Each \textit{perceived variable} is associated with the model of one agent (in CoWriter, the positions in space of the child is associated with the model of the child, while the evaluation of the robot is associated with the model of the robot-perceived-by-the-child). 
-%todo need to explain why one perceived variable <=> one model
+All sensors (cameras, micros, motor positions ... and in the case of CoWriter the tablet's inputs) are used to
+perceive information about the physical behaviour of agents. We call \textit{perceived variables} all the measurable quantities or qualities that provide such information (position in space, gaze's direction, speeches, movements, facial expressions ...). Thus, each agent's model is associated with a set of perceived variables that describes his physical behaviour.
 
-Some variables can't be directly measured by the sensitive devices and are deduced from other variables of models (see an example in the section [expected causality]). We call them \textit{abstract variables}. 
-%todo no section expected causality, give example here
-A model of an agent is the set of all the values of the perceived or abstract variables associated to this model. Since the values of variables are likely to change with the time, the models are dynamic.
+But emotional states of agents cannot be directly measured directly from sensors. We call \textit{abstract variables} all the quantities or qualities that describe the mental state of an agent. Abstract variables are deduced from the dynamic of perceived variables. As an example, if the robot shows an object by pointing it with its arm, it expects the child to look at the object. If then the child looks at the hand of the robot, the robot can deduce that the child has not understood the meaning of its gesture. The perceived variables are the robot's gesture and the gaze direction of the child. The deduced abstract variable is the understanding of the gesture by the child. 
+
+A model of an agent is the set of all the values of the perceived or abstract variables associated with this model. Since the values of variables are likely to change with the time, the models must be dynamic.
 
 %\subsection{Reasoning}
 
@@ -176,10 +182,8 @@ The picture~\ref{cog} visually summarize the global design of our architecture.
 \caption{\small\textbf{Overview of the cognitive architecture}. Yellow squares represent different main parts. White ellipses represent modules. We named in example some content of modules and illustrated possible devices used for perception and decisions. }
 \label{cog}
 \end{figure}
-%todo rewrite according to pierre's feedback
 Our cognitive architecture for mutual modelling can be designed in three main parts. 
-The \textbf{perception part} (see \ref{ssec:perception}) will regroup all the modules that measure the values of the perceived variables using sensitive devices (camera, sensors, micros...). 
-An example of module of the sensitive part could be the system developed by Lemaignan~\cite{lemaignan2016realtime} that uses camera to measure a value of \textit{with-me-ness}. 
+The \textbf{perception part} (see \ref{ssec:perception}) will regroup all the modules that measure the values of the perceived variables using sensors. 
 These values are sent to the \textbf{mutual modelling part} (see \ref{ssec:mmm}) that updates in real-time models with measured values of perceived variables and deducts the value of abstract variables. Finally, the \textbf{decision part} (see \ref{ssec:decision}) contains all the modules associated to the control of the robot (and other active devices like tablets in CoWriter). These modules can read values given by mutual models in order to compute decisions. In the example of the CoWriter activity, these modules are given by the system that learns and generate letters, but we can add a module that generates micro-behaviour, another that decides to switch to a new activity (e.g. drawing with the robot),\dots. The following subsections explain in detail the content and operation of each part of the architecture. 
 
 \subsection{Perception modules}
@@ -193,7 +197,6 @@ In CoWriter, the learning module takes inputs of tablets to compute the new stat
 \subsection{Mutual modelling modules}
 \label{ssec:mmm}
 Each perceived value measured by sensitive modules are associated with the model of an agent (or a $n^{th}$-order agent). Each mutual model can be designed as a module that knows the list of its associated perceived variables and watch if the value of one of these variables has been changed. 
-%todo trop flou comme description, il faut donné des noms et enrichir le schema pour y faire référence
 An additive module knows all the expected causalities and computes the values of abstract variables. Some expected causalities can be empirically learned and other set by hands. 
 
 \subsection{Decision making}
