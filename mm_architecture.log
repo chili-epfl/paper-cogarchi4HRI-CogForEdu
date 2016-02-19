@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.1.12)  19 FEB 2016 19:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.1.12)  19 FEB 2016 20:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -341,12 +341,12 @@ LaTeX Warning: Citation `clark1991grounding' on page 2 undefined on input line
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `!tbp') on input line 179.
 
-<cognitive_archi.pdf, id=17, 842.61877pt x 371.1497pt>
+<cognitive_archi.pdf, id=17, 845.04686pt x 597.50786pt>
 File: cognitive_archi.pdf Graphic file (type pdf)
 
 <use cognitive_archi.pdf>
 Package pdftex.def Info: cognitive_archi.pdf used on input line 181.
-(pdftex.def)             Requested size: 252.0pt x 110.99464pt.
+(pdftex.def)             Requested size: 252.0pt x 178.1779pt.
 
 No file mm_architecture.bbl.
 
@@ -382,7 +382,7 @@ lic/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
 tmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on mm_architecture.pdf (3 pages, 143678 bytes).
+Output written on mm_architecture.pdf (3 pages, 144124 bytes).
 PDF statistics:
  60 PDF objects out of 1000 (max. 8388607)
  42 compressed objects within 1 object stream
