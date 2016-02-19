@@ -179,7 +179,7 @@ The picture~\ref{cog} visually summarize the global design of our architecture.
 \begin{figure}[!]
 \centering
 \includegraphics[width=1\columnwidth]{cognitive_archi}
-\caption{\small\textbf{Overview of the cognitive architecture}. Yellow squares represent different main parts. White ellipses represent modules. We named in example some content of modules and illustrated possible devices used for perception and decisions. }
+\caption{\small\textbf{Overview of the cognitive architecture}. Yellow squares represent different main parts. White ellipses represent modules. We named in example some content of modules and illustrated possible devices used for perception and decisions with the context of the Cowriter Activity. We show a situation of miss-understanding : the child has a bad interpretation of the gesture of the robot. In order to repair this miss-understanding, a possible decision would be to exaggerate the movement. }
 \label{cog}
 \end{figure}
 Our cognitive architecture for mutual modelling can be designed in three main parts. 
@@ -188,11 +188,7 @@ These values are sent to the \textbf{mutual modelling part} (see \ref{ssec:mmm})
 
 \subsection{Perception modules}
 \label{ssec:perception}
-The sensitive modules contain all the module able to use sensitive devices to measure value of relevant perceived variables.
-%todo say that these modules are layered from signal perceived to percived variable
-% the perceived variables are more or less linked to the activity. SOme aren't for instance the with me ness 
-Some of these modules are associated with the content of the interaction activity. 
-In CoWriter, the learning module takes inputs of tablets to compute the new state of robot's writing. It defines a sensitive module, and the value of the new state of the robot to write a letter defines a perceived variable. As well, the evaluation of the robot by the child via the feedback buttons defines another perceived variable provided by the modules of the activity. Other modules are independent of the activity: the system that estimates the target objects looked by the child provides additive information not directly used by the modules of the activity.  
+The sensitive modules sensors to measure value of relevant perceived variables. While agent's gazes direction and facial expression can be used in any interaction, some additive variables can be specific of the activity: in CoWriter, a module takes inputs of tablets to compute the new state of robot's writing. It defines a sensitive module, and the value of the new state of the robot to write a letter defines a perceived variable. As well, the evaluation of the robot by the child via the feedback buttons defines another perceived variable provided by the modules of the activity. Other modules are independent of the activity: the system that estimates the target objects looked by the child provides additive information not directly used by the modules of the activity.  
 
 \subsection{Mutual modelling modules}
 \label{ssec:mmm}
@@ -202,9 +198,7 @@ An additive module knows all the expected causalities and computes the values of
 \subsection{Decision making}
 \label{ssec:decision}
 We believe that the values of variables provided by mutual modelling will provide rich and useful information for decision making. Taking in account these values to elaborate decision should improve the realism and the efficiency of the robot in the interaction.
-Just like the sensitive ones, the modules that take decision can be directly associated to the activity (in CoWriter, the choice of a new learning curve or the decision to suddenly make a big mistake), or can govern independent behaviour (for example a module that generate the micro-behaviour of the robot).
-
-Some decisions, especially the one that will govern the micro-behaviours of the robot can be autonomously made by the robot. It will not strongly affect the content and objectives of the activity (in CoWriter the main objective is to provide the child with a new extrinsic motivation to write in helping the robot). But other decisions can have a high impact on the progress of the interaction: to stop an activity and to switch to a new one can frustrate a child that was committed into the activity. The conditions to make such a decision are not directly assessable, but must be learned by the robot. In order to make these decision cautiously, we propose to start by a Wizard-of-Oz approach and to move towards an autonomous approach following these steps: 
+Just like the sensitive ones, the modules that take decision can be specific of the activity (in CoWriter, the choice of a new learning curve or the decision to suddenly make a big mistake), or can govern a general behaviour (for example the exaggeration of a miss-understood gesture). Some decisions can have a high impact on the progress of the interaction: to stop an activity and to switch to a new one can frustrate a child that was committed into the activity. The conditions to make such a decision are not directly assessable, but must be learned by the robot. In order to make these decision cautiously, we propose to start by a Wizard-of-Oz approach and to move towards an autonomous approach following these steps: 
 \begin{enumerate}
 \item \textbf{Wizard-of-Oz}: A human takes decisions; the robot learns
 \item \textbf{Mixed-initiative}: The robot makes suggestions; a human agrees or disagrees
