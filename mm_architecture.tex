@@ -44,11 +44,11 @@ $^2$INESC-ID \& Instituto Superior T\'{e}cnico, University of Lisbon, Portugal
 % in the abstract
 \begin{abstract}
 In social robotics, robots needs to be able to be understood by humans.
-Especially in collaborative tasks where they have to share a mutual knowledge. 
+Especially in collaborative tasks where they have to share mutual knowledge. 
 For instance, in an educative scenario, learners share their knowledge and they must adapt their behaviour in order to make sure they are understood by others. 
 Learners display behaviours in order to show their understanding and teachers adapt in order to make sure that the learners' knowledge is the required one. 
-This ability requires a model of their own mental states perceived by others: \textit{``has human understood that I(robot) need this object for the task or should I explain it once again ?"}  
-In this paper, we discuss of the importance of a cognitive architecture enabling second-order Mutual Modelling for Human-Robot Interaction in educative contexts.
+This ability requires a model of their own mental states perceived by others: \textit{``has the human understood that I(robot) need this object for the task or should I explain it once again ?"}  
+In this paper, we discuss the importance of a cognitive architecture enabling second-order Mutual Modelling for Human-Robot Interaction in educative contexts.
 
 
 \end{abstract}
@@ -90,36 +90,38 @@ In this paper, we discuss of the importance of a cognitive architecture enabling
 
 %%%% ToM
 
-A social robot is brought to interact with humans. The quality of this interaction depends on its ability to behave in an acceptable and understandable manner by the user. Hence the importance for a robot to take care of his image: how much it is perceived as an automatic and boring agent, or contrariwise as a surprising and intelligent character. If the robot is able to detect this perception of itself, it can adapt its behaviour in order to be understood: ``you think I am sad while I am happy, I want you to understand that I am happy". In a collaborative context, where knowledge must be shared, agents must exhibit that they are acquiring the shared information with an immediate behaviour: ``I look what you are showing to me, do you see I am looking what you are showing, do you think I am paying attention to your explanation ?"; ``I have understood your idea, do you understand I have understood ?". We have different strategies to exhibit understanding or to repair a miss-understanding. As an example, if someone is talking about a visual object, we alternatively gaze at the object and at the person to make sure he saw we gazed at the object. Or if we detect that the other have not understood a gesture (e.g. pointing an object) we probably exaggerate the gesture.
+A social robot is brought to interact with humans. The quality of this interaction depends on its ability to behave in an acceptable and understandable manner by the user. Hence the importance for a robot to take care of his image: how much it is perceived as an automatic and repetitive agent, or contrarily as a surprising and intelligent character. If the robot is able to detect this perception of itself, it can adapt its behaviour in order to be understood: ``you think I am sad while I am happy, I want you to understand that I am happy". 
+
+In a collaborative context, where knowledge must be shared, agents must exhibit that they are acquiring the shared information with an immediate behaviour: ``I look at what you are showing me, do you see that I am looking at it, do you think I am paying attention to your explanation ?"; ``I have understood your idea, do you understand that I have understood ?". 
+As humans, we have different strategies to exhibit understanding or to resolve a misunderstanding. 
+As an example, if someone is talking about a visual object, we alternatively gaze between the object and the person to make sure he saw that we gazed at the object. Or if we detect that the other person has not understood a gesture (e.g. pointing at an object) we would probably exaggerate the gesture.
 
 Developed by Baron-Cohen and Leslie~\cite{baron1985does}, the Theory of Mind (ToM) describes the ability to attribute mental states and knowledge to others. In interaction, humans are permanently collecting and analysing huge quantity of information to stay aware of emotions, goals and understandings of their fellows. In this work, we focus on a generalization of this notion: Mutual Modelling characterizes the effort of one agent to model the mental state of another one~\cite{dillenbourg1999you}. 
 
-Until now, the work conduced by the Human-Robot Interaction (HRI) community to develop mutual modelling abilities in robots was limited to a first level of modelling (see related work in section~\ref{rw}). Higher levels require the ability to recursively attribute a theory of mind to other agent (\textit{I think that you think that} ...) and their application to HRI remains unexplored. However, a knowledge of oneself perceived by others is necessary to adapt a behaviour to keep mutual understandings. Without such a reflection it is possible to try collaborations, but no immediate feedbacks of success are given. If the trial has failed it is impossible to guess it and to repair it. 
+Until now, the work conduced by the Human-Robot Interaction (HRI) community to develop mutual modelling abilities in robots was limited to a first level of modelling (see related work in section~\ref{rw}). Higher levels require the ability to recursively attribute a theory of mind to other agents (\textit{I think that you think that} ...) and their application to HRI remains unexplored. However, a knowledge of oneself perceived by others is necessary to adapt a behaviour to keep mutual understandings. 
+% %TODO pas comprehensible
+Without such a reflection it is possible to try collaborations, but no immediate feedbacks of success are given. If the trial has failed, it is impossible to guess it and to repair it. 
 
 %%%% CoWriter
 % improve transition
 % elgaguer
 
 An important challenge of social robotics is to provide assistance in education. 
-The ability of robots to support adaptive and repetitive task can be valuable in a learning interaction.
-The CoWriter Project~\cite{Hood,jacq2016building} introduces a new approach to help children with difficulties to learn handwriting. 
-Based on the \emph{learning by teaching} paradigm, the goal of the project is not only to help children with their handwriting but mainly to improve their self-confidence and motivation in practising handwriting.
+The ability of robots to support adaptive and repetitive tasks can be valuable in a learning interaction.
+The CoWriter Project~\cite{Hood,jacq2016building} introduces a new approach to help children with difficulties in learning handwriting. 
+Based on the \emph{learning by teaching} paradigm, the goal of the project is not only to help children with their handwriting, but mainly to improve their self-confidence and motivation in practising such exercise.
 
 \emph{Learning by teaching} engages students to conduct the activity in the role of the teachers in order to support their learning process. 
 This  paradigm is known to produce motivational, meta-cognitive and educational benefits in a range of disciplines~\cite{Rohrbeck2003}. 
-The CoWriter project is the first application of learning by teaching approach to handwriting.
+The CoWriter project is the first application of the learning by teaching approach to handwriting.
 
-The effectiveness of this learning by teaching activity is built on the ``prot\'eg\'e effect'': the teacher feels responsible for his student, commits
-to the student's success and possibly experiences student's failure as his own
-failure to teach. 
-The main idea is to promote the child's extrinsic motivation to write letters (he will do it in order to help his ``prot\'eg\'e" robot) and to reinforce the self-esteem of the child (he plays the teacher and the robot actually progresses).
+The effectiveness of this learning by teaching activity is built on the ``prot\'eg\'e effect'': the teacher feels responsible for his student, commits to the student's success and possibly experiences student's failure as his own failure to teach. 
+The main idea is to promote the child's extrinsic motivation to write letters (he does it in order to help his ``prot\'eg\'e" robot) and to reinforce the self-esteem of the child (he plays the teacher and the robot actually progresses).
 
 In that context, the robot needs to pretend enough difficulties to motivate the child to help it. 
-This pretending strongly depends on the perception of the robot by the child: the displayed behaviours (gestures, gazes and sounds) by the robot, the initial level and learning speed of the robot must match with what the child imagines of a ``robot in difficulty".
+This ability of the robot to pretend strongly depends on the perception of the robot by the child: the displayed behaviours (gestures, gazes and sounds) by the robot, the initial level and learning speed of the robot must match with what the child imagines of a ``robot in difficulty".
 In order to adapt to the child, the robot needs then to have a model of how it is perceived by the child. On the other side, the child builds also a model of the robot's difficulties and attitude. 
 This mutual-modelling is primordial in order to have mutual understanding and fluid interaction between learner and teacher. 
-
-
 
 \section{Related works}\label{rw}
 
