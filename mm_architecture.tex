@@ -99,8 +99,6 @@ As an example, if someone is talking about a visual object, we alternatively gaz
 Developed by Baron-Cohen and Leslie~\cite{baron1985does}, the Theory of Mind (ToM) describes the ability to attribute mental states and knowledge to others. In interaction, humans are permanently collecting and analysing huge quantity of information to stay aware of emotions, goals and understandings of their fellows. In this work, we focus on a generalization of this notion: Mutual Modelling characterizes the effort of one agent to model the mental state of another one~\cite{dillenbourg1999you}. 
 
 Until now, the work conduced by the Human-Robot Interaction (HRI) community to develop mutual modelling abilities in robots was limited to a first level of modelling (see related work in section~\ref{rw}). Higher levels require the ability to recursively attribute a theory of mind to other agents (\textit{I think that you think that} ...) and their application to HRI remains unexplored. However, a knowledge of oneself perceived by others is necessary to adapt a behaviour to keep mutual understandings. 
-% %TODO pas comprehensible
-Without such a reflection it is possible to try collaborations, but no immediate feedbacks of success are given. If the trial has failed, it is impossible to guess it and to repair it. 
 
 %%%% CoWriter
 % improve transition
@@ -141,12 +139,7 @@ Breazeal~\cite{breazeal2009embodied} and Warnier~\cite{warnier2012when} reproduc
 In \cite{lemaignan2016realtime}, Lemaignan implemented a system that computes the visual field of agents and estimates which objects are looked at in real-time. This time, the robot is not just aware of what \textit{can be seen} by agents, but it perceives what \textit{is currently being looked at}. Lemaignan used this system to measure Sharma's \textit{with-me-ness}~\cite{sharma2014me}, visual commitment based on expected focus of attention in an activity. 
 
 \section{MM-based reasoning}
-We must make a distinction between architectures that perform mutual modelling and simple cognitive architectures (that do not model other agents) in order to avoid misunderstandings and Russel's paradoxes.
-%TODO wtf?
-Let's call \textit{basic} such a simple architecture and \textit{MM-based} the mutual modelling ones. 
-
-%\subsection{Representation of models}
-A first intuition for mutual modelling is to assume that all agents have the same basic architecture. In~\cite{breazeal2009embodied}, Breazeal et al. show a MM-based reasoning where the robot uses its own basic architecture to model other agents. We can imagine such an architecture extended to the second level reasoning. But that creates an infinite recursive loop: the agent then models the robot that models the agent etc. Another reason to avoid a recursive approach is that different agent must have different behaviours: in similar situations, they will not necessarily take similar decisions. 
+A first intuition for mutual modelling is to assume that all agents have the same basic architecture. In~\cite{breazeal2006using}, Breazeal show a MM-based reasoning where the robot uses its own architecture to model other agents. We can imagine a second level of modelling where the robot recursively attribute to other agents the mutual modelling ability. But it would create an infinite recursive loop: the agent then models the robot that models the agent etc. Another reason to avoid a recursive approach is that different agent must have different behaviours: in similar situations, they will not necessary take similar decisions. 
 
 We propose a different approach of modelling, where we define two orders of agents: the \textit{first-order-agents} deal with direct representations of agents by the robot (for example the child), while the \textit{second-order-agents} deal with the representation of agents by agents (for example the \textit{robot-perceived-by-the-child}). 
 Modelling \textit{second-order-agent} like the \textit{robot-perceived-by-the-child} will help to model how the child perceives the robot, e.g. to make sure the child understands that the robot is learning from his demonstrations. 
